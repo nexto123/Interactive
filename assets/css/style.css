@@ -4,7 +4,7 @@ body {
     color: #555;
     font-family: 'Lato', 'Arial', sans-serif;
     font-weight: 300;
-    font-size: 14px;
+    font-size: 16px;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
 }
@@ -23,6 +23,9 @@ header {
     background-position: center;
     height: 100vh;
     background-attachment: fixed;
+}
+.heading-text{
+    font-size: 300%;
 }
 .search-box{
     position: relative;
@@ -54,25 +57,151 @@ header {
     padding: 5px;
     
 }
-.fa-cocktail {
-    color: azure;
-    margin: 10px;
-    font-size: 30px;
-    position: relative;
-    top: 10px;
-    border-left: 2px solid;
-    padding-left: 5px;
-}
-.results-container{
-    
+
+/* #results-table{
+    border-collapse: collapse;
     box-sizing: content-box;
-    width: 600px;
-    height: 100%;
-    z-index: 1500;
+    width: 100%;
+    max-width: 400px;
+    height: 100px;
     margin: auto;
     overflow: scroll;
-}
-.link-box{
+} */
 
-}
 /*-------------Auto Complete-----*/
+
+table {
+    font-size: 14px;
+  }
+  #map {
+    width: 440px;
+  }
+  #listing {
+    height: 300px;
+    overflow: auto;
+    cursor: pointer;
+    overflow-x: hidden;
+  }
+  
+  #locationField {
+    position: absolute;
+    width: 190px;
+    height: 25px;
+    left: 108px;
+    top: 0px;
+    z-index: 5;
+    background-color: #fff;
+  }
+  #controls {
+    position: absolute;
+    left: 300px;
+    width: 140px;
+    top: 0px;
+    z-index: 5;
+    background-color: #fff;
+  }
+  #autocomplete {
+    width: 100%;
+  }
+  #country {
+    width: 100%;
+  }
+  .placeIcon {
+    width: 20px;
+    height: 34px;
+    margin: 4px;
+  }
+  .hotelIcon {
+    width: 24px;
+    height: 24px;
+  }
+  #rating {
+    font-size: 13px;
+    font-family: Arial Unicode MS;
+  }
+  .iw_table_row {
+    height: 18px;
+  }
+  .iw_attribute_name {
+    font-weight: bold;
+    text-align: right;
+  }
+  .iw_table_icon {
+    text-align: right;
+  }
+  input[type=checkbox], input[type=radio] {
+    box-sizing: border-box;
+    padding: 0;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+button {
+    
+    width: 15%;
+    height: 50px;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+  }
+  .hvr-underline-reveal:before {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #2196f3;
+    height: 2px;
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+.cala {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    background-color: #00000073;
+}
+
+
+/*--------media Queries-------*/
+@media(max-width: 414px) {
+    body {
+       font-size: 14px;
+       
+      }
+      .heading-text{
+          font-size: 200%;
+      }
+      .select-input{
+        height: 50px;
+        width: 100%;
+        max-width: 414px;
+        margin: auto 0;
+        display: inline-block;
+        border-radius: 0%;
+        padding: 5px;
+        
+    }
+    .search-button{
+        display: none;
+    }
+    header {
+        background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.79)), url('https://static.fivestar.ie/venues/6/5/65666/subpage/photos/1524487840-1136-wm.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        background-attachment: fixed;
+    }
+    
+    }
+
