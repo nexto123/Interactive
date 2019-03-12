@@ -17,3 +17,62 @@ h4{
     text-transform: uppercase;
 }
 
+header {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.79)), url('https://static.fivestar.ie/venues/6/5/65666/subpage/photos/1524487840-1136-wm.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+}
+.search-box{
+    position: relative;
+    top: 20%;
+}
+.background{
+    padding: 90px;
+    padding-bottom: 150px;
+    background-color: #555555d4
+}
+.main-input{
+    height: 50px;
+    width: 100%;
+    max-width: 600px;
+    margin: auto ;
+    display: inline-block;
+    border-radius: 1px;
+    padding: 5px;
+    
+    
+}
+.select-input{
+    height: 50px;
+    width: 100%;
+    max-width: 354px;
+    margin: auto 0;
+    display: inline-block;
+    border-radius: 0%;
+    padding: 5px;
+    
+}
+.fa-cocktail {
+    color: azure;
+    margin: 10px;
+    font-size: 30px;
+    position: relative;
+    top: 10px;
+    border-left: 2px solid;
+    padding-left: 5px;
+}
+.results-container{
+    
+    box-sizing: content-box;
+    width: 600px;
+    height: 100%;
+    z-index: 1500;
+    margin: auto;
+    overflow: scroll;
+}
+.link-box{
+
+}
+/*-------------Auto Complete-----*/

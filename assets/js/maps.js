@@ -1,16 +1,8 @@
-// This example uses the autocomplete feature of the Google Places API.
-// It allows the user to find all hotels in a given place, within a given
-// country. It then displays markers for all the hotels returned,
-// with on-click details for each hotel.
-
-// This example requires the Places library. Include the libraries=places
-// parameter when you first load the API. For example:
-// <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
 var map, places, infoWindow;
 var markers = [];
 var autocomplete;
-var countryRestrict = {'country': 'us'};
+var countryRestrict = {'country': 'ie'};
 var MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/images/marker_green';
 var hostnameRegexp = new RegExp('^https?://.+?/');
 
@@ -66,13 +58,23 @@ var countries = {
   'uk': {
     center: {lat: 54.8, lng: -4.6},
     zoom: 5
+  },
+  'ie': {
+    center: {lat: 53.4, lng: -8.2},
+    zoom: 5
   }
 };
 
+// //my own codes
+// function selectParam(){
+
+// };
+
+
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
-    zoom: countries['us'].zoom,
-    center: countries['us'].center,
+    zoom: countries['ie'].zoom,
+    center: countries['ie'].center,
     mapTypeControl: false,
     panControl: false,
     zoomControl: false,
@@ -113,18 +115,26 @@ function onPlaceChanged() {
   }
 }
 
-// Search for hotels in the selected city, within the viewport of the map.
+
+// Search for places based on the selected city, within the viewport of the map.
 function search() {
+  var selectOps= document.getElementsByClassName('establishment');
+  for (var i=0; i<selectOps.length; i++){
+      if(selectOps[i].checked){
+        var selected = selectOps[i].value
+      }
+  }
   var search = {
     bounds: map.getBounds(),
-    types: ['lodging']
+    types: [selected]
   };
+  
 
   places.nearbySearch(search, function(results, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
       clearResults();
       clearMarkers();
-      // Create a marker for each hotel found, and
+      // Create a marker for each Query found, and
       // assign a letter of the alphabetic to each marker icon.
       for (var i = 0; i < results.length; i++) {
         var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
@@ -210,8 +220,8 @@ function clearResults() {
   }
 }
 
-// Get the place details for a hotel. Show the information in an info window,
-// anchored on the marker for the hotel that the user selected.
+// Get the place details for a Query. Show the information in an info window,
+//  Pops up on the marker, with details of the selected place
 function showInfoWindow() {
   var marker = this;
   places.getDetails({placeId: marker.placeResult.place_id},
@@ -240,8 +250,8 @@ function buildIWContent(place) {
     document.getElementById('iw-phone-row').style.display = 'none';
   }
 
-  // Assign a five-star rating to the hotel, using a black star ('&#10029;')
-  // to indicate the rating the hotel has earned, and a white star ('&#10025;')
+  // Assign  rating to the Query/Place, using a black star ('&#10029;')
+  // to indicate the rating the Place has earned, and a white star ('&#10025;')
   // for the rating points not achieved.
   if (place.rating) {
     var ratingHtml = '';
