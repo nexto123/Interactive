@@ -42,7 +42,7 @@ The search or Query features are located in the centre of the page with the retu
 * [Google Maps Javascript API](https://cloud.google.com/maps-platform/)
 
 
-## Deployment To Git & Heroku
+## Deployment To GitHub
 
 After committing to git with the appropriate messages, 
 I'll now perform a git push to my GitHub Repo.
